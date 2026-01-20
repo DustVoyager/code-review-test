@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 유튜버 팬 페이지
 
-## Getting Started
+Next.js 14와 Tailwind CSS로 제작된 유튜버 팬 페이지입니다.
 
-First, run the development server:
+## 기능
+
+- 🎨 현대적이고 반응형 디자인
+- 🎥 최신 유튜브 영상 섹션
+- 👤 유튜버 소개 및 통계
+- 🔗 소셜 미디어 링크
+- ⚡ Next.js 14 App Router 사용
+- 💅 Tailwind CSS로 스타일링
+
+## 시작하기
+
+### 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 결과를 확인하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 빌드
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 커스터마이징
 
-To learn more about Next.js, take a look at the following resources:
+### 유튜버 정보 수정
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+다음 파일들을 수정하여 유튜버 정보를 변경할 수 있습니다:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### `components/Header.tsx`
+- 채널 이름 변경
 
-## Deploy on Vercel
+#### `components/Hero.tsx`
+- 유튜버 이름, 소개 문구 수정
+- 구독자, 영상 수, 조회수 통계 업데이트
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### `components/VideoSection.tsx`
+- `videos` 배열의 `id`를 실제 유튜브 영상 ID로 변경
+- 영상 제목과 설명 수정
+- 유튜브 채널 링크 업데이트
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### `components/SocialLinks.tsx`
+- `socials` 배열의 URL을 실제 소셜 미디어 링크로 변경
+- 필요에 따라 소셜 미디어 추가/제거
+
+#### `app/layout.tsx`
+- 페이지 제목과 설명(메타데이터) 수정
+
+## 프로젝트 구조
+
+```
+fan-page/
+├── app/
+│   ├── layout.tsx       # 루트 레이아웃
+│   ├── page.tsx         # 메인 페이지
+│   └── globals.css      # 전역 스타일
+├── components/
+│   ├── Header.tsx       # 헤더/네비게이션
+│   ├── Hero.tsx         # 히어로 섹션 (소개)
+│   ├── VideoSection.tsx # 영상 목록
+│   ├── SocialLinks.tsx  # 소셜 미디어 링크
+│   └── Footer.tsx       # 푸터
+└── public/              # 정적 파일
+```
+
+## 기술 스택
+
+- [Next.js 14](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## 배포
+
+Vercel에서 쉽게 배포할 수 있습니다:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+## 라이선스
+
+MIT
